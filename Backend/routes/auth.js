@@ -2,8 +2,12 @@ import express from 'express';
 import User from '../models/User.js'
 import { Schema } from 'mongoose';
 import { body , validationResult } from  "express-validator";
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+
 const authRouter = express.Router();
 
+const JWT_SECRET = 'Rahulisagoodb$oy'
 //crate a user using : post "/api/auth/createuser". No login required
 authRouter.post('/createuser',[
     body('name','Enter a valid name').isLength({min:3}),
@@ -22,13 +26,23 @@ authRouter.post('/createuser',[
      if(user){
         return  res.status(400).json("User already exists");
      }
+     const salt = await bcrypt.genSalt(10);
+     const secPass = await bcrypt.hash(req.body.password,salt);
+
      //create a new user
     user = await User.create({
         name : req.body.name,
-        password : req.body.password,
+        password : secPass,
         email : req.body.email,
-     })
-     res.json(user);
+     });
+     const data = {
+        user:{
+            id: user.id
+        }
+     }
+     const authtoken = jwt.sign(data,JWT_SECRET);
+
+     res.json({authtoken});
      
     }catch(error){
         console.error(error.message);
