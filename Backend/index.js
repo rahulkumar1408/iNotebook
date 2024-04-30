@@ -12,4 +12,4 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/notes', notesRouter);
 
-app.listen(port, () => console.log(`Server running on http://localhost:${port}/`));
+app.listen(port, () => console.log(`iNotebook backend listening at http://localhost:${port}/`));
