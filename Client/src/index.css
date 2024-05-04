@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.icon{
+    cursor: pointer;
+}
+.alert-red {
+    background-color: #ffcccc; /* Light red */
+    color: #cc0000; /* Dark red */
+  }
+  
+  .alert-blue {
+    background-color: #cce6ff; /* Light blue */
+    color: #0066cc; /* Dark blue */
+  }
