@@ -19,7 +19,7 @@ function AddNote(props) {
     <div>
     <div className='container grid my-3'>
         <div className='place-self-center'>
-          <h1 className='text-lg font-bold'>Add Notes</h1>
+          <h1 className='text-lg font-bold text-red-500'>Add Notes</h1>
         </div> 
     </div>
     <div className='container grid my-5'>
