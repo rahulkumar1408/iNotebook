@@ -14,3 +14,10 @@
     background-color: #cce6ff; /* Light blue */
     color: #0066cc; /* Dark blue */
   }
+
+  .login-bg{
+    background-image: url('./images/login2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }

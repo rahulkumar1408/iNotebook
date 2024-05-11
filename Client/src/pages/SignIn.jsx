@@ -35,17 +35,12 @@ function SignIn(props) {
   }
 
   return (
-    <div className='flex bg-gray-200 overflow-hidden'>
-      <div className=' h-screen m-3 w-3/5  flex items-center justify-center bg-gray-200'>
-      <div className='w-half h-half overflow-hidden'>
-        <img class="w-full  object-cover rounded-lg max-w-full" src="https://cdni.iconscout.com/illustration/premium/thumb/login-page-4468581-3783954.png" alt="image description"></img>
-      </div>
-    </div>
-      <form className=" right-0 ml-10 mt-40 max-w-md" onSubmit={handleSubmit}>
+    <div className=' w-full h-full flex justify-center'>
+      <form className=" w-auto h-50% ml-10 mt-32 max-w-md" onSubmit={handleSubmit}>
       <h2 className='place-self-center font-bold mt-5 text-2xl'>Sign in to your account</h2>
         <div className="mb-5 mt-5">
           <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-          <input type="email" id="email" name='email' value={credentials.email} onChange = {onChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
+          <input type="email" id="email" name='email' value={credentials.email} onChange = {onChange} className="lg:w-96 bg-gray-50 border  px-4 py-2  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="abc@gmail.com" required />
         </div>
         <div className="mb-5">
           <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
@@ -58,7 +53,7 @@ function SignIn(props) {
           <label htmlFor="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
         </div>
         <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-100 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Login</button>
-        <h2 className='text-sm mt-3'>Don't Have an account?<a href="#" onClick = {handleClick} className="ml-2 underline hover:underline ... text-blue-800">Register</a></h2>
+        <h2 className='text-sm mt-3'>Don't Have an account?<a href="#" onClick = {handleClick} className="ml-2 underline hover:underline ... text-red-900">Register</a></h2>
       </form>
 
     </div>

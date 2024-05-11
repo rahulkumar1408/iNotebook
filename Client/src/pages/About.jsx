@@ -13,7 +13,7 @@ function About() {
     navigate('/sign-up')
   }
   return (
-    <div className='relative'>
+    <div className='relative bg-white'>
       <div className='flex w-full'>
         <img className='' src={img1} alt="main" />
         <div className='block mt-44'>
