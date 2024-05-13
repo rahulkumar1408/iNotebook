@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import User from '../models/User.js'
 import { Schema } from 'mongoose';
@@ -7,7 +8,7 @@ import jwt from 'jsonwebtoken';
 import fetchuser from '../middleware/fetchuser.js';
 const authRouter = express.Router();
 
-const JWT_SECRET = 'Rahulisagoodb$oy'
+const JWT_SECRET = process.env.JWT_SECRET;
 //Route 1: create a user using : post "/api/auth/createuser". No login required
 authRouter.post('/createuser',[
     body('name','Enter a valid name').isLength({min:3}),

@@ -1,5 +1,6 @@
+import 'dotenv/config';
 import jwt from 'jsonwebtoken';
-const JWT_SECRET = 'Rahulisagoodb$oy'
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const fetchuser = (req,res,next)=>{
     //get the user from the jwt token and add it to req object
