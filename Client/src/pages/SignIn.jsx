@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 
 function SignIn(props) {
+  const host = "https://inotebook-7.onrender.com"
   const [credentials,setCredentials] = useState({email:"",password:""});
   let navigate = useNavigate();
 
@@ -10,7 +11,7 @@ function SignIn(props) {
   }
   const handleSubmit = async (e)=> {
     e.preventDefault();
-    const response = await fetch(`http://localhost:5000/api/auth/login`,{
+    const response = await fetch(`${host}/api/auth/login`,{
       method:"POST",
       headers: {
           'content-type' : 'application/json',

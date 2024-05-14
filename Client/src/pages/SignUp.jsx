@@ -9,10 +9,11 @@ function SignUp(props) {
     navigate("/sign-in");
   }
   const handleSubmit = async (e)=> {
+    const host = "https://inotebook-7.onrender.com"
     e.preventDefault();
     const {email,password,fname,lname} = credentials;
     const name = `${fname} ${lname}`;
-    const response = await fetch(`http://localhost:5000/api/auth/createuser`,{
+    const response = await fetch(`${host}/api/auth/createuser`,{
       method:"POST",
       headers: {
           'content-type' : 'application/json',
